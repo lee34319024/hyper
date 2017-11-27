@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+	
+		<title>넓이구하기</title>
+		<style>
+		
+			#subtitle{
+				color:yellow;
+			}
+			#subtitle2{
+				color:blue
+			}
+			
+			input,button{
+			margin-bottom: 10px;
+			}
+				
+				
+				body{
+			background-color:lightblue;
+			}
+			</style>
+		</head>
+		
+		<body>
+		 <nav>
+				<button><a href="main.html">홈으로</a></button>
+		</nav>
+			<h1 id="subtitle">계산기</h1>
+			<hr>
+			첫 번째 숫자:<input type="text"id="numA"><br>
+			두 번째 숫자:<input type="text"id="numB"><br>
+			<button id="btn">계산하기</button><br/>
+			결과값:<input type="text"id="result"><hr><br>
+			<h1 id="subtitle2">사각형 넓이 계산기</h1>
+			<hr>
+			가로:<input type="text"id="numC"><br>
+			세로:<input type="text"id="numD"><br>
+			<button id="btn2">넓이구하기</button><br/>
+			결과값:<input type="text"id="result2">
+		</body>
+			
+		<script>
+			var btn = document.getElementById("btn");
+			
+			btn.onclick = function(){
+				var n1 = document.getElementById("numA").value;
+				var n2 = document.getElementById("numB").value;
+				
+				
+				n1 = parseInt(n1);
+				n2 = parseInt(n2);
+				
+				
+				var result = n1 + n2;
+				
+				
+				document.getElementById("result").value = result;
+			};
+			
+			var btn2 = document.getElementById("btn2");
+			
+			btn2.onclick = function() {
+				var n1 = document.getElementById("numC").value;
+				var n2 = document.getElementById("numD").value;
+				
+				
+				n1 = parseInt(n1);
+				n2 = parseInt(n2);
+				
+				
+				var result = n1 * n2;
+				
+				
+				document.getElementById("result2").value = result;
+			};
+		</script>
+			
+</html>

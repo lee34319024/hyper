@@ -1,0 +1,7 @@
+#game td, img{
+    width: 35%;
+    height: 35%;
+}
+.gg:hover{
+    cursor: pointer;
+}

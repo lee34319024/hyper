@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>up&down</title>
+        <style>
+            body{
+                background-color: lightgreen 
+            }
+        </style>
+    </head>
+    <body>
+        <subtitle>UP&DOWN<br>
+        <button id="btn">리셋</button><br><hr>
+        입력:<input type="text" id="num">
+        <button id="btn2">맞추기</button>
+       
+        <hr>
+        <h1 id="result"></h1>
+
+    </body>
+</html>
+
+<script>
+   let button =document.querySelector("#btn");
+    let button2 =document.querySelector("#btn2");
+   let rn = 0;
+   
+   button.onclick = () => {
+       rn = Math.floor(Math.random() * 100) + 1;
+       alert('리셋 되었습니다.');
+      
+       
+   };
+   button2.onclick = () => {
+       let n =document.querySelector("#num").value;
+       
+        if(n > rn) {
+            alert("DOWN");
+        }else if(n < rn) {
+            alert("UP");
+        }else{
+            alert("CORRECT");
+        }
+
+   };
+ </script>

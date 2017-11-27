@@ -1,0 +1,49 @@
+<DOCTYPE html>
+    <html>
+
+    <head>
+        <title>제목</title>
+        <style>
+            #image {
+                width: 300px;
+                height: 300px;
+            }
+            html{
+                background-color: skyblue;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+				<button><a href="main.html">홈으로</a></button>
+		</nav>
+        <h1>이미지</h1>
+        <img id="image">
+        <hr>
+        <button id="btnChangeImageA">A로 사진 바꾸기</button>
+        <button id="btnChangeImageB">B로 사진 바꾸기</button>
+        <button id="btnChangeImageC">C로 사진 바꾸기</button>
+    </body>
+    <script>
+        var btnA = document.getElementById("btnChangeImageA");
+        var btnB = document.getElementById("btnChangeImageB");
+        var btnC = document.getElementById("btnChangeImageC");
+
+        btnA.onclick = function () {
+            var img = document.getElementById('image');
+            img.src = "jpg.PNG";
+        };
+
+        btnB.onclick = function () {
+            var img = document.getElementById('image');
+            img.src = "FGS.jpg";
+        };
+
+        btnC.onclick = function () {
+            var img = document.getElementById('image');
+            img.src = "GSS.jpg";
+        };
+    </script>
+
+    </html>

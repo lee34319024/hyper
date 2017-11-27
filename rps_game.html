@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        #topDiv{
+            text-align: center;
+        }
+        .name{
+            float: left;
+            width: 50%;
+            text-align: center;
+        }
+        #me {
+            color: white;
+            background-color: blue;
+        }
+        #enemy{
+            color: white;
+            background-color: red;
+        }
+        .test {
+            float: left;
+            width: 33%;
+        }
+        .test:hover {
+            cursor: pointer;
+        }
+        #choise {
+            width: 100%
+        
+        }
+        #selectDiv{
+            clear: both;
+            text-align: center;
+            background-color: greenyellow;
+            height: 30px;
+        }
+        .sel-img, #me2, #enemy2{
+            width: 100%;
+            height: 300px;
+        }
+        </style>
+
+    </head>
+    <body>
+        <nav>
+				<button><a href="main.html">홈으로</a></button>
+		</nav>
+        <div id="topDiv">
+            <h1>가위바위보 게임</h1>
+        </div>
+        <div id="gameDiv">
+            <span class="name" id="me">나</span>
+            <span class="name" id="enemy">상대</span>
+        </div>
+        <div>
+        <span class="name"><img id="me2"src="sad.jpg"></span>
+        <span class="name"><img id="enemy2"src="sad.jpg"></span>
+        </di>
+        <div id="selectDiv">
+            <span id="choise">선택</span>
+        </div>
+        <div class="test">
+           <img class='sel-img'src="sad.jpg">   
+           
+        </div>
+        <div class="test">
+          <img class='sel-img'src="jbd.jpg">  
+           
+        </div>
+        <div class="test">
+           <img class='sel-img'src="sdf.jpg">   
+           
+        </div>
+
+    </body>
+</html>
+
+<script>
+    let btns =document.querySelectorAll(".sel-img");
+
+    let chooseComputer = () => {
+        let ri = Math.floor(Math.random() * btns.length);
+        let src = btns[ri].getAttribute("src");
+
+        document.querySelector("#enemy2").setAttribute("src",src);
+        document.querySelector("#enemy2").setAttribute("data-n",ri);
+    };
+    
+
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].onclick = () => {
+            let src = btns[i].getAttribute("src");
+            document.querySelector("#me2").setAttribute("src" , src);
+            document.querySelector("#me2").setAttribute("data-n",i);
+            chooseComputer(); 
+            result();
+        };
+    }
+    let result = () => {
+        let me2 =document.querySelector("#me2");
+        let enemy2 =document.querySelector("#enemy2");
+        let me2N = me2.getAttribute("data-n");
+         let enemy2N = enemy2.getAttribute("data-n");
+         
+         let realresult = () => {
+
+         if ((me2N === '0' && enemy2N === '2') || (me2N === '1' && enemy2N === '0')||(me2N === '2' && enemy2N === '1')) {
+             alert('당신이 이겼습니다.');
+         }
+
+         else if ((me2N ==='0' && enemy2N === '1') || (me2N ==='1' && enemy2N === '2') || (me2N ==='2' && enemy2N === '0')) {
+             alert('당신이 졌습니다.');
+         }
+
+         else {
+             alert('비겼습니다.');
+         }};
+         setTimeout(realresult, 300);
+    };
+
+</script>

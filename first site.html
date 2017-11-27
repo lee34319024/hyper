@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<title>사이트</title>
+			<style>
+			
+			#subtitle {
+			color:green;
+			}
+			#btn {
+				width:300px;
+				height:100px;
+				color:blue;
+				background-color: lightgoldenrodyellow;
+			}
+			html{
+				background-color: lightcoral;
+			}
+			</style>
+	</head>
+	<body>
+		<nav>
+				<button><a href="main.html">홈으로</a></button>
+		</nav>
+			<h1 id="subtitle">나의 첫 사이트</h1>
+			<hr>
+			이름: <input type="text" id="name2" value="관리자"><br><br>
+			<button id="btn">클릭</button>
+	</body>
+	<script>
+			var btn = document.getElementById('btn');
+			
+			btn.onclick=function(){
+				var textTag=document.getElementById('name2');
+				var name=textTag.value;
+			
+				alert(name+"님 환영해요!");
+			};
+	</script>
+</html>	

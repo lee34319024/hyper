@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript 연습</title>
+    <style>
+        html{
+            background-color: lightgreen;
+        }
+        </style>
+</head>
+
+<body>
+    <nav>
+				<button><a href="main.html">홈으로</a></button>
+		</nav>
+    <label for="world">입력:</label>
+    <input type="text" id="word">
+    <button id="show">보기</button>
+    <hr>
+    <h1 id="result"></h1>
+</body>
+
+<script>
+    let list = [];
+
+    let text = document.querySelector("#word");
+    text.onkeypress = (e) => {
+        if (e.keyCode == 13) {
+            if(text.value !== "") {
+                list.push(text.value);
+                text.value = "";
+                let result = document.querySelector('#result');
+                result.innerText = list.toString();
+            }
+        }
+    };
+
+    let btn = document.querySelector("#show");
+    btn.onclick = () => {
+        let result = document.querySelector('#result');
+        result.innerText = list.toString();
+    };
+</script>
+
+</html>
